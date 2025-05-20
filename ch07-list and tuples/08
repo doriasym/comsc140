@@ -1,0 +1,29 @@
+def hasARE(words):
+    are = ['a', 'r', 'e']
+    answers = []
+    
+    for word in words:
+        n = 0
+        for char in word:
+            if n < len(are) and char == are[n]:
+                n += 1
+            if n == len(are):
+                answers.append(word)
+                break
+    return answers
+
+def main():
+
+    words = ['are', 'arrow', 'amore', 'aspire', 'assertive', 'arrogant', 'bartender', 'carter']
+    are = ['a', 'r', 'e']
+    ret = hasARE(words)
+    print(f'The result is: {ret}')
+
+    words = ['assertive', 'arrogant', 'bartender', 'carter', 'racer']
+    are = ['a', 'r', 'e']
+    ret = hasARE(words)
+    print(f'The result is: {ret}')
+
+
+if __name__ == '__main__':
+    main()

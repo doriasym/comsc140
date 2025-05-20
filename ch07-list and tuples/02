@@ -1,0 +1,23 @@
+def isSubList(numbers1, numbers2):
+    for num1 in numbers1:
+        result = False
+        for num2 in numbers2:
+            if num1 == num2:
+                result = True
+                break
+
+    return result
+
+
+def main():
+    numbers1 = [40, 10, 5]
+    numbers2 = [10, 5, 20, 0, 40, 45, 50]
+
+    if isSubList(numbers1, numbers2):
+        print(f'{numbers1} is a Sublist of {numbers2} ')
+    else:
+        print(f'{numbers1} is not a Sublist of {numbers2} ')
+
+
+if __name__ == '__main__':
+    main()

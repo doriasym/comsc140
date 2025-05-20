@@ -1,0 +1,66 @@
+def getMaxElement(numbers):
+    max_value = numbers[0][0]
+    
+    for row in numbers:
+        for num in row:
+            if num > max_value:
+                max_value = num
+    
+    return max_value
+
+
+def getSumRows(numbers):
+    rowsum = []
+    
+    for row in numbers:
+        rowsum.append(sum(row))
+    return rowsum
+
+
+def getSumCols(numbers):
+    row_len =[]
+    
+    for row in numbers:
+        row_len.append(len(row))
+    
+    num_colsum = max(row_len)
+    colsum = [0] * num_colsum
+    
+    for i in range(num_colsum):
+        for row in numbers:
+            if i < len(row):
+                colsum[i] += row[i]
+    
+    return colsum
+
+
+def getMaxElmRow(numbers):
+    max_list = []
+    
+    for row in numbers:
+        max_list.append(max(row))
+    
+    return max_list
+
+
+def main():
+    ##################################################
+    numbers = [[99, 11, 66, 86, 55],
+               [44, 21, 65, 88, 24, 56],
+               [33, 77, 32, 33, 34]]
+    ##################################################
+    ret = getMaxElement(numbers)
+    print('Return value from getMaxElement', ret)
+
+    ret = getSumRows(numbers)
+    print('Return value from getSumRows', ret)
+
+    ret = getSumCols(numbers)
+    print('Return value from getSumCols', ret)
+
+    ret = getMaxElmRow(numbers)
+    print('Return value from getMaxElmRow', ret)
+
+
+if __name__ == '__main__':
+    main()
