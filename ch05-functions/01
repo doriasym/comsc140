@@ -1,0 +1,30 @@
+def shiftN(stringvalue, direction, N):
+    strvalue = ''
+    if direction == 0:
+        for i in range(N,len(stringvalue)):
+            strvalue += stringvalue[i]
+        for i in range(N):
+            strvalue += '0'
+    if direction == 1:
+        for i in range(N):
+            strvalue += '0'
+        for i in range(len(stringvalue) - N):
+            strvalue += stringvalue[i]
+    return strvalue
+
+
+def main():
+    str = '001100'
+    print(int(str, 2))
+    rstr = shiftN(str, 0, 2)
+    print(rstr)
+    print(int(rstr, 2))
+
+    rstr = '110000'
+    rstr = shiftN(rstr, 1, 4)
+    print(rstr)
+    print(int(rstr, 2))
+
+
+if __name__ == '__main__':
+    main()

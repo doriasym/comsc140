@@ -1,0 +1,32 @@
+import random
+
+
+def sumoProduct(l1, l2):
+    if len(l1) != len(l2):
+        print('The lists should have the same length.')
+        l1 = int(input())
+        l2 = int(input())
+    sumP = 0
+    for i in range(len(l1)):
+        a = l1[i] * l2[i]
+        sumP += a
+    return sumP
+
+
+
+def main():
+    numbers1 = [5, 3, 1, 1, 2]
+    numbers2 = [1, 2, 2, 9, 5]
+    result = sumoProduct(numbers1, numbers2)
+    print('Your result : ', result)
+
+
+    numbers1 = [random.randint(1, 10) for i in range(5)]
+    numbers2 = [random.randint(1, 10) for i in range(5)]
+    print('numbers 1 ', numbers1)
+    print('numbers 2 ', numbers2)
+    result = sumoProduct(numbers1, numbers2)
+    print('Your result : ', result)
+
+if __name__ == '__main__':
+    main()
