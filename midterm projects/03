@@ -1,0 +1,27 @@
+def main():
+
+    number = int(input('Enter your number: '))
+    while True:
+        number += 1
+        p = 1
+
+        for i in range (2, int(number ** 0.5)+1):
+            if number % i == 0:
+                p = 0
+                break
+        if p == 1:
+            pnumber = number
+            break
+
+
+    print(pnumber)
+
+    ########################################
+    # Do not delete the return statement
+    ########################################
+    return pnumber
+##
+
+
+if __name__ == '__main__':
+    main()

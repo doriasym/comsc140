@@ -1,0 +1,24 @@
+def getPrimeNumber(begin, end):
+    def isprime(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num**0.5)+1):
+            if num % i == 0:
+                return False
+        return True
+    
+    for number in range(begin, end+1):
+        if isprime(number):
+            yield number
+
+
+def main():
+    begin = int(input('Enter the number for starting of range: '))
+    end = int(input('Enter the number for end of range: '))
+    gen = getPrimeNumber(begin, end)
+
+    print(list(gen))
+
+
+if __name__ == '__main__':
+    main()

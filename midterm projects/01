@@ -1,0 +1,19 @@
+def bubblesort(number):
+    for i in range(len(number)):
+        bubble(number)
+
+
+def bubble(number):
+   for i in range(len(number)-1):
+       if number[i] > number[i+1]:
+           number[i], number[i+1] = number[i+1], number[i]
+
+
+def main():
+    number = list(map(int, input().split()))
+    bubblesort(number)
+    print(number)
+
+
+if __name__ == '__main__':
+    main()

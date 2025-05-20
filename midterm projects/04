@@ -1,0 +1,31 @@
+def main():
+
+    i = 0
+    longest = shortest = ''
+
+    while True:
+        word = input('Enter a word: ')
+
+        if (word == 'stop' or word == 'STOP'):
+            break
+
+        if (i == 0):
+            longest = shortest = word
+        else:
+            if (len(word) > len(longest) or (len(word) == len(longest) and word < longest)):
+                longest = word
+            if (len(word) < len(shortest) or (len(word) == len(shortest) and word < shortest)):
+                shortest = word
+
+        i += 1
+    print(longest)
+    print(shortest)
+    ########################################
+    # Do not delete the return statement
+    ########################################
+    return longest, shortest
+##
+
+
+if __name__ == '__main__':
+    main()
